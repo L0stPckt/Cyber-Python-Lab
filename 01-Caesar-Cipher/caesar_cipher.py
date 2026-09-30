@@ -13,6 +13,8 @@ choice = input("Select an option ")
 
 if choice == "1": 
     print("Encrypt selected")
+    message = input("Enter a message to encrypt: ")
+    print("Message:", message)
 elif choice == "2":
         print("Decrypt selected")
 elif choice == "3":
@@ -20,4 +22,4 @@ elif choice == "3":
 elif choice =="4":
       print("Exiting ..")
 else:
-      print("Please enter a number between 1 and 4")
+      print("Invalid selection. Please enter a number between 1 and 4")
