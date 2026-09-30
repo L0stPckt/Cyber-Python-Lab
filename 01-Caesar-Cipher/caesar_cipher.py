@@ -9,3 +9,5 @@ print("Enter [2] for Decrypt")
 print("Enter [3] for Brute Force")
 print("Enter [4] to Exit")
 
+choice = input("Select an option ")
+print ("You selected:", choice)
