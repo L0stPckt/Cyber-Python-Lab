@@ -14,7 +14,9 @@ choice = input("Select an option ")
 if choice == "1": 
     print("Encrypt selected")
     message = input("Enter a message to encrypt: ")
+    shift = int(input("Enter a shift number from 1 to 24: "))
     print("Message:", message)
+    print("Shift: ", shift)
 elif choice == "2":
         print("Decrypt selected")
 elif choice == "3":
