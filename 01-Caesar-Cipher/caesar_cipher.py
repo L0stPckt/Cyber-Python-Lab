@@ -1,3 +1,8 @@
+alphabet = "abcdefghijklmnopqrstuvwxyz"
+
+#new_letter = alphabet[new_position]
+#print(new_letter)
+
 print("===================================")
 print("       CAESAR CIPHER TOOL")
 print("===================================")
@@ -14,9 +19,20 @@ choice = input("Select an option ")
 if choice == "1": 
     print("Encrypt selected")
     message = input("Enter a message to encrypt: ")
-    shift = int(input("Enter a shift number from 1 to 24: "))
-    print("Message:", message)
-    print("Shift: ", shift)
+    shift = int(input(" Enter shift number: "))
+    if 0 <= shift <=25: 
+        for letter in message:
+            if letter in alphabet:
+                position = alphabet.index(letter)
+                new_position = (position + shift) % 26
+                new_letter = alphabet[new_position]
+                print(new_letter)
+            else:
+                 print(letter)    
+    else:
+        print("ERROR: Shift must be between 0 and 25") 
+
+
 elif choice == "2":
         print("Decrypt selected")
 elif choice == "3":
