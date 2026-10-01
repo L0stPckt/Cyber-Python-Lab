@@ -43,7 +43,27 @@ if choice == "1":
 
 
 elif choice == "2":
-        print("Decrypt selected")
+    print("Decrypt selected")
+    message = input("Enter a message to decrypt: ")
+    shift = int(input(" Enter shift number: "))
+        
+    if 0 <= shift <=25: 
+        decrypted_message = ""
+
+        for letter in message:
+             if letter.lower() in alphabet:
+
+                  position = alphabet.index(letter.lower())
+                  new_position = (position - shift) % 26
+                  new_letter = alphabet[new_position]
+
+                  if letter.isupper():
+                       new_letter = new_letter.upper()
+                  decrypted_message = decrypted_message + new_letter
+             else:
+                  decrypted_message = decrypted_message + letter
+        print(decrypted_message)     
+         
 elif choice == "3":
       print("Brute Force selected")
 elif choice =="4":
