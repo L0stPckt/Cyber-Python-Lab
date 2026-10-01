@@ -19,6 +19,8 @@ if choice == "1":
     shift = int(input(" Enter shift number: "))
     if 0 <= shift <=25: 
 
+        encrypted_message = " " #creating empty string container to place new letters        
+
         for letter in message:
             if letter.lower() in alphabet:
 
@@ -29,11 +31,12 @@ if choice == "1":
                 if letter.isupper():
                      new_letter = new_letter.upper()
                     #if the original letter ws uppercase, make the new letter upper case
-                print(new_letter)
+                
+                encrypted_message = encrypted_message + new_letter #creating a single line for the encrypted letters
        
             else:
-                 print(letter)    
-
+               encrypted_message = encrypted_message + letter
+        print(encrypted_message)
      
     else:
         print("ERROR: Shift must be between 0 and 25") 
