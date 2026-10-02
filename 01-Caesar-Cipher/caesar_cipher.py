@@ -46,8 +46,6 @@ if choice == "1":
     except ValueError:
         print("ERROR: Shift must be a whole number between 0 and 25") 
 
-
-
 elif choice == "2":
     print("Decrypt selected")
     message = input("Enter a message to decrypt: ")
