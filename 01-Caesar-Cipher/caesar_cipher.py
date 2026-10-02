@@ -66,6 +66,28 @@ elif choice == "2":
          
 elif choice == "3":
       print("Brute Force selected")
+      message = input("Enter a message to Brute Force: ")
+
+      for shift in range(26):
+        decrypted_message = ""
+
+        for letter in message:
+
+            if letter.lower() in alphabet:
+                position = alphabet.index(letter.lower())
+                new_position = (position - shift) % 26
+                new_letter = alphabet[new_position]
+
+                if letter.isupper():
+                    new_letter = new_letter.upper()
+
+                decrypted_message = decrypted_message + new_letter
+
+            else:
+                decrypted_message = decrypted_message + letter
+
+        print("Shift", shift, ":", decrypted_message)
+
 elif choice =="4":
       print("Exiting ..")
 else:
