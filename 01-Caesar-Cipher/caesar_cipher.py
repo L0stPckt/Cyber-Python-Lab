@@ -16,30 +16,36 @@ choice = input("Select an option ")
 if choice == "1": 
     print("Encrypt selected")
     message = input("Enter a message to encrypt: ")
-    shift = int(input(" Enter shift number: "))
-    if 0 <= shift <=25: 
 
-        encrypted_message = " " #creating empty string container to place new letters        
+    try:
+        
+        shift = int(input(" Enter shift number: "))
+        if 0 <= shift <=25: 
 
-        for letter in message:
-            if letter.lower() in alphabet:
+            encrypted_message = " " #creating empty string container to place new letters        
 
-                position = alphabet.index(letter.lower())
-                new_position = (position + shift) % 26
-                new_letter = alphabet[new_position]
+            for letter in message:
+                if letter.lower() in alphabet:
 
-                if letter.isupper():
-                     new_letter = new_letter.upper()
-                    #if the original letter ws uppercase, make the new letter upper case
-                
-                encrypted_message = encrypted_message + new_letter #creating a single line for the encrypted letters
-       
-            else:
-               encrypted_message = encrypted_message + letter
-        print(encrypted_message)
-     
-    else:
-        print("ERROR: Shift must be between 0 and 25") 
+                    position = alphabet.index(letter.lower())
+                    new_position = (position + shift) % 26
+                    new_letter = alphabet[new_position]
+
+                    if letter.isupper():
+                        new_letter = new_letter.upper()
+                        #if the original letter ws uppercase, make the new letter upper case
+                    
+                    encrypted_message = encrypted_message + new_letter #creating a single line for the encrypted letters
+        
+                else:
+                    encrypted_message = encrypted_message + letter
+            print(encrypted_message)
+        else:
+            print("ERROR: Shift must be between 0 and 25") 
+    
+    except ValueError:
+        print("ERROR: Shift must be a whole number between 0 and 25") 
+
 
 
 elif choice == "2":
