@@ -54,14 +54,10 @@ while True:
                 decrypted_message = ""
 
                 for letter in message:
-                    if letter.lower() in alphabet:
-
-                        position = alphabet.index(letter.lower())
+                    if letter in alphabet:
+                        position = alphabet.index(letter)
                         new_position = (position - shift) % len(alphabet)
                         new_letter = alphabet[new_position]
-
-                        if letter.isupper():
-                            new_letter = new_letter.upper()
                         decrypted_message = decrypted_message + new_letter
                     else:
                         decrypted_message = decrypted_message + letter
@@ -82,13 +78,10 @@ while True:
 
             for letter in message:
 
-                if letter.lower() in alphabet:
-                    position = alphabet.index(letter.lower())
+                if letter in alphabet:
+                    position = alphabet.index(letter)
                     new_position = (position - shift) % len(alphabet)
                     new_letter = alphabet[new_position]
-
-                    if letter.isupper():
-                        new_letter = new_letter.upper()
 
                     decrypted_message = decrypted_message + new_letter
 
