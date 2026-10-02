@@ -7,7 +7,7 @@ while True:
     print("       CAESAR CIPHER TOOL")
     print("===================================")
     print()
-    print("Welcome to the Casear Cipher Tool")
+    print("Welcome to the Casear Cipher Tool - v2.0")
     print()
     print("Enter [1] for Encrypt")
     print("Enter [2] for Decrypt")
